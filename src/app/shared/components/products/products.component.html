@@ -1,0 +1,31 @@
+
+
+<div class="row">
+    <div class="col-md-12 mb-4 text-right">
+        <!-- <button class="btn btn-outline-warning btn-lg" routerLink="/products/addProduct">Add Product</button> -->
+        <button mat-raised-button color="accent" routerLink="/products/addProduct">Add Product</button>
+    </div>
+    <div class="col-md-4 ">
+        <ul class="list-group mb-4" *ngIf="productsArr ; else noProduct">
+            <li class="list-group-item info-li" 
+            *ngFor="let prod of productsArr" [routerLink]="['/products', prod.pid]"
+            [queryParams]="{
+                canEdit : prod.canReturn
+            }"
+            >
+                    {{prod.pname}}
+            </li>
+        </ul>
+
+        <ng-template #noProduct>
+            <p class="alert alert-info">
+                There is no product added yet !!
+            </p>
+        </ng-template>
+        <!-- <button class="btn btn-outline-primary" routerLink="/users">Go to Users</button> -->
+        <button mat-raised-button color="primary" class="mb-4" routerLink="/users">Go to Users</button>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<p>
+    This is product <strong>{{this.prodObj.pname}}</strong> with <strong>{{this.prodObj.pid}}</strong>
+</p>
+
+<button class="btn btn-outline-primary" routerLink="edit" 
+[queryParamsHandling]="'preserve'"
+>Edit Product</button>
+<!-- <button class="btn btn-outline-danger ml-2" (click)="onRemoveProduct()" >Remove Product</button> -->
+<button mat-raised-button color="warn" class=" ml-2" (click)="onRemoveProduct()" >Remove Product</button>
+
+<!-- <a class="btn btn-outline-primary ml-2" [routerLink]="['/products', '333']">show info of Samsung </a> -->

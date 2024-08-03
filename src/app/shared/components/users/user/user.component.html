@@ -1,0 +1,12 @@
+<p>
+    This is user <strong>{{this.userObj.userName}}</strong> with <strong>{{this.userObj.userId}}</strong>
+</p>
+
+<!-- <button class="btn btn-outline-primary" [routerLink]="['/users', this.userObj.userId, 'edit']">Edit User</button> -->
+
+<button class="btn btn-outline-primary" (click)="gotoEditUser()" >Edit User</button>
+
+<!-- <button class="btn btn-outline-danger ml-2" (click)="onUserRemove()" >Remove User</button> -->
+<button mat-raised-button color="warn" class=" ml-2" (click)="onUserRemove()" >Remove User</button>
+
+<!-- <a class=" btn btn-outline-primary ml-2" [routerLink]="['/users', '4']">show info of rupesh </a> -->

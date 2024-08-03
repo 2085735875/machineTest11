@@ -1,0 +1,31 @@
+
+
+<div class="row">
+    <div class="col-md-12 mb-4 text-right">
+        <!-- <button class="btn btn-outline-warning btn-lg" routerLink="/users/addUser">Add User</button> -->
+        <button mat-raised-button color="accent" routerLink="/users/addUser">Add User</button>
+    </div>
+    <div class="col-md-4 ">
+        <ul class="list-group mb-4" *ngIf="usersArr ; else noUser">
+            <li class="list-group-item info-li" 
+            *ngFor="let user of usersArr" [routerLink]="['/users', user.userId]"
+            [queryParams]="{
+                userRole : user.userRole
+            }"
+            >
+                    {{user.userName}}
+            </li>
+        </ul>
+
+        <ng-template #noUser>
+            <p class="alert alert-info">
+                There is no user added yet !!
+            </p>
+        </ng-template>
+        <!-- <button class="btn btn-outline-primary" routerLink="/products">Go to Products</button> -->
+        <button mat-raised-button color="primary" class="mb-4" routerLink="/products">Go to Products</button>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

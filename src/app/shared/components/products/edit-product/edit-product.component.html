@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="prodForm" (ngSubmit)="onProductAdd()">
+                    <div class="form-group">
+                        <label for="pname">Product Name</label>
+                        <input type="text" id="pname" formControlName="pname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="pstatus">Product Status</label>
+                        <select class="form-control"  id="pstatus" formControlName="pstatus">
+                            <option value="In_Progress">In_Progress</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Dispatched">Dispatched</option>
+                        </select>
+                    </div>
+                    <!-- <div class="text-right">
+                        <button 
+                       
+                        *ngIf="isinEditMode"
+                        class="btn btn-outline-primary" type="button" (click)="onProductUpdate()">Update Product</button>
+
+                        <button 
+                        *ngIf="!isinEditMode"
+                        class="btn btn-outline-primary" type="submit" >Create Product</button>
+                    </div> -->
+                    <div class="text-right">
+                        <button 
+                        [disabled]="!isinEditMode2"
+                        *ngIf="isinEditMode"
+                       mat-raised-button color="accent" type="button" (click)="onProductUpdate()">Update Product</button>
+
+                        <button 
+                        *ngIf="!isinEditMode"
+                        mat-raised-button color="accent" type="submit" >Create Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
